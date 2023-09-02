@@ -2,12 +2,13 @@
 
 [![Godot Version](https://img.shields.io/badge/Godot-4.1-brightgreen.svg)](https://godotengine.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
+[![](https://img.shields.io/badge/Docs-%239dbd4b?style=for-the-badge&logo=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DMaterial%2BSymbols%2BOutlined%3Aopsz%2Cwght%2CFILL%2CGRAD%4048%2C400%2C1%2C0&logoColor=white)](https://zennyth.github.io/EnhancedStat/#/)
 ---
 
 ## 🔍 Table of Contents
 
 - [✨ Enhanced Stat for Godot 4.1](#-enhanced-stat-for-godot-41)
+  - [](#)
   - [🔍 Table of Contents](#-table-of-contents)
   - [📖 Overview](#-overview)
   - [📦 Installation](#-installation)
