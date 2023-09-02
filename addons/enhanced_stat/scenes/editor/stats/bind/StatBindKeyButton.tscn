@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://1pf1oqyag73b"]
+
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/editor/stats/bind/stat_bind_key_button.gd" id="1_vib5v"]
+
+[node name="OptionButton" type="OptionButton"]
+offset_left = 638.0
+offset_right = 1272.0
+offset_bottom = 720.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text_overrun_behavior = 3
+fit_to_longest_item = false
+script = ExtResource("1_vib5v")

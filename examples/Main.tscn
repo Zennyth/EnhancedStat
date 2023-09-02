@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdgiu5l2kqbpg"]
+
+[ext_resource type="PackedScene" uid="uid://ck684akobfi16" path="res://examples/MainCharacter.tscn" id="1_jswyl"]
+[ext_resource type="PackedScene" uid="uid://vlhkksrpxdkm" path="res://examples/Trap.tscn" id="2_uqf8t"]
+
+[node name="Main" type="Node2D"]
+
+[node name="MainCharacter" parent="." instance=ExtResource("1_jswyl")]
+
+[node name="Trap" parent="." instance=ExtResource("2_uqf8t")]
+position = Vector2(136, 0)

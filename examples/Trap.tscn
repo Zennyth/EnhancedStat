@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://vlhkksrpxdkm"]
+
+[ext_resource type="Script" path="res://examples/trap.gd" id="1_0wlgu"]
+[ext_resource type="Texture2D" uid="uid://c1ey2m3tsixru" path="res://examples/icons/icons8-heart-24.png" id="2_nc2di"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/status_effect_applier.gd" id="3_g3xux"]
+[ext_resource type="Resource" uid="uid://bjlna64ih6rym" path="res://examples/stun.tres" id="4_swh51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b01lp"]
+radius = 62.0
+
+[node name="Trap" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_0wlgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b01lp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nc2di")
+
+[node name="StatusEffectApplier" type="Node" parent="."]
+script = ExtResource("3_g3xux")
+status_effects = Array[Resource("res://addons/enhanced_stat/scripts/core/status_effects/status_effect.gd")]([ExtResource("4_swh51")])

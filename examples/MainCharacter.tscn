@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck684akobfi16"]
+
+[ext_resource type="Script" path="res://examples/main_character.gd" id="1_cd7i7"]
+[ext_resource type="Script" path="res://examples/stats/character_stats_manager.gd" id="1_ol300"]
+[ext_resource type="Resource" uid="uid://oe84vs447ksg" path="res://examples/stats/main_character_stats.tres" id="2_5fqki"]
+[ext_resource type="Script" path="res://addons/enhanced_common/scripts/controllers_2d/player_controller_2d.gd" id="3_aqdci"]
+[ext_resource type="Texture2D" uid="uid://8pvahvtehjux" path="res://docs/assets/logo.png" id="3_kdufo"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/bind/stat_value_bind.gd" id="4_yoxgu"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/status_effect_manager.gd" id="5_i7qdj"]
+[ext_resource type="Script" path="res://examples/stats/controllable_stat.gd" id="5_j7k6q"]
+[ext_resource type="Script" path="res://addons/enhanced_common/scripts/velocity_2d/character_body_velocity_2d.gd" id="6_jnuk4"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/bind/stat_bind.gd" id="7_dwh3t"]
+[ext_resource type="Script" path="res://examples/stats/speed_stat.gd" id="8_rnavr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m5hq"]
+size = Vector2(22, 32)
+
+[node name="MainCharacter" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_cd7i7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_kdufo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_6m5hq")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("1_ol300")
+stats = ExtResource("2_5fqki")
+
+[node name="StatusEffects" type="Node" parent="."]
+script = ExtResource("5_i7qdj")
+
+[node name="Controller2D" type="Node2D" parent="."]
+script = ExtResource("3_aqdci")
+
+[node name="IsControllableBind" type="Node" parent="Controller2D" node_paths=PackedStringArray("stats_manager", "target")]
+script = ExtResource("4_yoxgu")
+stats_manager = NodePath("../../Stats")
+target = NodePath("..")
+stat_key = ExtResource("5_j7k6q")
+property_to_bind = "is_controllable"
+
+[node name="Velocity2D" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("6_jnuk4")
+target = NodePath("..")
+autostart = true
+
+[node name="SpeedBind" type="Node" parent="Velocity2D" node_paths=PackedStringArray("stats_manager", "target")]
+script = ExtResource("7_dwh3t")
+stats_manager = NodePath("../../Stats")
+target = NodePath("..")
+stat_key = ExtResource("8_rnavr")
+property_to_bind = "speed"

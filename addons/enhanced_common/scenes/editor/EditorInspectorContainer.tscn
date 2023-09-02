@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsimqh2jb2h5k"]
+
+[ext_resource type="Script" path="res://addons/enhanced_common/scripts/editor/editor_inspector_container.gd" id="1_nsf6p"]
+
+[node name="EditorInspectorContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+script = ExtResource("1_nsf6p")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stat"

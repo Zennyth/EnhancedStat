@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=11 format=3 uid="uid://oe84vs447ksg"]
+
+[ext_resource type="Script" path="res://examples/stats/character_stats.gd" id="1_lwvtb"]
+[ext_resource type="Script" path="res://examples/stats/controllable_stat.gd" id="1_wpt1d"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/stat/computed/number/int_stat.gd" id="2_xfufk"]
+[ext_resource type="Script" path="res://examples/stats/health_stat.gd" id="3_tlg4f"]
+[ext_resource type="Script" path="res://examples/stats/speed_stat.gd" id="5_ujxmp"]
+
+[sub_resource type="Resource" id="Resource_lfj2i"]
+script = ExtResource("1_wpt1d")
+default_value = true
+
+[sub_resource type="Resource" id="Resource_217d6"]
+script = ExtResource("2_xfufk")
+default_value = 0
+
+[sub_resource type="Resource" id="Resource_y74ib"]
+script = ExtResource("2_xfufk")
+default_value = 10
+
+[sub_resource type="Resource" id="Resource_a4w8b"]
+script = ExtResource("3_tlg4f")
+max = SubResource("Resource_217d6")
+min = SubResource("Resource_y74ib")
+default_value = 0
+
+[sub_resource type="Resource" id="Resource_jbcoo"]
+script = ExtResource("5_ujxmp")
+default_value = 100.0
+
+[resource]
+script = ExtResource("1_lwvtb")
+controllable = SubResource("Resource_lfj2i")
+health = SubResource("Resource_a4w8b")
+speed = SubResource("Resource_jbcoo")

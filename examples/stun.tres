@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=10 format=3 uid="uid://bjlna64ih6rym"]
+
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/status_effect.gd" id="1_ecr30"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/components/stat_modifier_status_effect_component.gd" id="2_54da5"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/modifiers/computed/bool_stat_modifier.gd" id="3_4xyp4"]
+[ext_resource type="Script" path="res://examples/stats/controllable_stat.gd" id="4_eod4l"]
+[ext_resource type="PackedScene" uid="uid://djm60vxv46gse" path="res://examples/StunVfx.tscn" id="4_h3i7d"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/components/vfx_status_effect_component.gd" id="4_omh0b"]
+
+[sub_resource type="Resource" id="Resource_gfebl"]
+script = ExtResource("3_4xyp4")
+new_value = false
+stat_key = ExtResource("4_eod4l")
+apply_count = 1
+
+[sub_resource type="Resource" id="Resource_r3j7t"]
+script = ExtResource("2_54da5")
+stat_modifiers = Array[Resource("res://addons/enhanced_stat/scripts/core/stats/modifiers/stat_modifier.gd")]([SubResource("Resource_gfebl")])
+
+[sub_resource type="Resource" id="Resource_vnhlj"]
+script = ExtResource("4_omh0b")
+packed_vfx = ExtResource("4_h3i7d")
+
+[resource]
+script = ExtResource("1_ecr30")
+id = "Stun"
+duration = 1.0
+tick_interval = 0.0
+status_effect_components = Array[Resource("res://addons/enhanced_stat/scripts/core/status_effects/components/_status_effect_component.gd")]([SubResource("Resource_r3j7t"), SubResource("Resource_vnhlj")])

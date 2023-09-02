@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0mu6ixl6ymjn"]
+
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/editor/stats/listeners/stat_listener_button.gd" id="1_68eqh"]
+
+[node name="OptionButton" type="OptionButton"]
+offset_left = 638.0
+offset_right = 1272.0
+offset_bottom = 720.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text_overrun_behavior = 3
+fit_to_longest_item = false
+script = ExtResource("1_68eqh")

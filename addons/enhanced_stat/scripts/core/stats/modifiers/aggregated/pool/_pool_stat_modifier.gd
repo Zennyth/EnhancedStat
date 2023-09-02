@@ -1,0 +1,4 @@
+extends AggregatedStatModifier
+class_name PoolStatModifier
+
+@export var is_infinite: BoolStatModifier
