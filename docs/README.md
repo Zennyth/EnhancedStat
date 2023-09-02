@@ -2,6 +2,7 @@
 
 [![Godot Version](https://img.shields.io/badge/Godot-4.1-brightgreen.svg)](https://godotengine.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Static Badge](https://img.shields.io/badge/Doc-0.0.1-blue)](https://zennyth.github.io/EnhancedStat/)
 
 **Enhanced Stat** is an addon suite for Godot 4.1, designed to provide an intuitive and powerful way to manage stats in games such as Health, Mana, Speed, and Attack Damage. This addon is part of the **Enhanced** suite aimed to make your Godot development faster, cleaner, and more enjoyable!
 

@@ -2,6 +2,7 @@
 
 [![Godot Version](https://img.shields.io/badge/Godot-4.1-brightgreen.svg)](https://godotengine.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Static Badge](https://img.shields.io/badge/Doc-0.0.1-blue)](https://zennyth.github.io/EnhancedStat/)
 
 ---
 
