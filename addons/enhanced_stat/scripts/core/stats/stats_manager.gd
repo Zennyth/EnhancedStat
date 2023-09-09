@@ -9,13 +9,20 @@ class_name StatsManager
 var stats: Stats:
 	set = set_stats
 
+var _stats: Stats
+
 func set_stats(value) -> void:
 	stats = value
+
+	if stats == null:
+		return
+	
+	_stats = stats.duplicate(true)
 	initialize_replication()
 
 ## Get a specific stat by it's key
 func get_stat(key: Variant) -> Stat:
-	return stats.get_stat(key) if stats != null else null
+	return _stats.get_stat(key) if _stats != null else null
 
 
 
@@ -25,24 +32,24 @@ func get_stat(key: Variant) -> Stat:
 
 ## Add a stat modifier to a stat
 func add_stat_modifier(stat_modifier: StatModifier) -> void:
-	if stats == null:
+	if _stats == null:
 		return
 
-	stats.add_stat_modifier(stat_modifier)
+	_stats.add_stat_modifier(stat_modifier)
 
 ## Remove a stat modifier from a stat
 func remove_stat_modifier(stat_modifier: StatModifier) -> void:
-	if stats == null:
+	if _stats == null:
 		return
 
-	stats.remove_stat_modifier(stat_modifier)
+	_stats.remove_stat_modifier(stat_modifier)
 
 ## Clear all stat modifiers from all stats
 func clear_stat_modifiers() -> void:
-	if stats == null:
+	if _stats == null:
 		return
 
-	stats.clear_stat_modifiers()
+	_stats.clear_stat_modifiers()
 
 
 ###
@@ -65,11 +72,11 @@ func initialize_replication() -> void:
 	if is_replication_enabled == true or !is_node_ready():
 		return
 	
-	if stats == null:
+	if _stats == null:
 		return
 	
-	for stat_key in stats.map.keys():
-		stats.get_stat(stat_key).value_changed.connect(_on_stat_value_changed.bind(stat_key, stats.get_stat(stat_key)))
+	for stat_key in _stats.map.keys():
+		_stats.get_stat(stat_key).value_changed.connect(_on_stat_value_changed.bind(stat_key, _stats.get_stat(stat_key)))
 	
 	is_replication_enabled = true
 
