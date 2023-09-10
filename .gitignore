@@ -13,4 +13,4 @@ data_*/
 
 ## gd-plug
 .plugged/
-.addons/enhanced_common/
+addons/enhanced_common/*
