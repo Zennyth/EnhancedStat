@@ -3,7 +3,7 @@ class_name VfxStatusEffectComponent
 
 @export var packed_vfx: PackedScene
 
-var vfx: Node2D
+var vfx: Node
 
 func _enable() -> void:
 	vfx = packed_vfx.instantiate()
