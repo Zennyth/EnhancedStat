@@ -58,13 +58,13 @@
 
 ### 💻 Editor Friendly
 
-- **Editor Inspector**: Use the editor to configure the stats and status effects for you game. 
+- **Editor Inspector**: Use the editor to configure the stats and status effects for your game. 
 
 ---
 
 ## 🔗 Dependencies
 
-- **Enhanced Common**: This addon depends on the `enhanced_common` addon for various utilities and common functionalities. Make sure to also have this addon installed and enabled.
+- **Enhanced Common**: This addon depends on the [enhanced_common](https://github.com/Zennyth/EnhancedCommon) addon for various utilities and common functionalities. Make sure to also have this addon installed and enabled.
 
 ---
 
@@ -104,13 +104,14 @@ Here is an overview of the project's file hierarchy:
 
 ## 📗 Usage
 
-Check the [documentation](#documentation) for tutorials, API references, and examples to get started. Usage is straightforward and can easily be integrated into your existing Godot project.
+Check the [documentation](https://zennyth.github.io/EnhancedStat/) for tutorials, API references, and examples to get started. Usage is straightforward and can easily be integrated into your existing Godot project.
 
 ---
 
 ## 📝 Documentation
 
-Further documentation is available in the `docs` directory. You can also check the inline comments for a more detailed understanding of specific methods and functionalities.
+Further documentation is available in the `docs` directory. 
+You can also check the inline comments for a more detailed understanding of specific methods and functionalities.
 
 ---
 

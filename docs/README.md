@@ -25,7 +25,7 @@
 
 ### 💻 Editor Friendly
 
-- **Editor Inspector**: Use the editor to configure the stats you need for you game, the status effects and more ... 
+- **Editor Inspector**: Use the editor to configure the stats you need for your game, the status effects and more ... 
 
 
 # 📦 Installation
