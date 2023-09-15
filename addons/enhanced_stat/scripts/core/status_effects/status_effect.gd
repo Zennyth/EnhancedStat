@@ -42,7 +42,7 @@ var tick_clock: float = .0
 var initial_status_effect_components: Array[StatusEffectComponent] = []
 
 
-func is_target_valid(_target: Node2D) -> bool:
+func is_target_valid(_target: Node) -> bool:
 	return true
 
 func set_target(value) -> void:
