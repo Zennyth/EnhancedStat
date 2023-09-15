@@ -1,6 +1,6 @@
 extends Resource
 
-var target: Node2D:
+var target: Node:
 	set = set_target
 
 func set_target(value) -> void:

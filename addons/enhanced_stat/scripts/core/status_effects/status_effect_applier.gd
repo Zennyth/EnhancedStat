@@ -4,7 +4,7 @@ class_name StatusEffectApplier
 
 @export var status_effects: Array[StatusEffect] = []
 
-func apply(target: Node2D) -> void:
+func apply(target: Node) -> void:
 	var status_effect_manager: StatusEffectManager = NodeUtils.find_node(target, StatusEffectManager)
 
 	if status_effect_manager == null or status_effects == null:
@@ -18,7 +18,7 @@ func apply(target: Node2D) -> void:
 
 
 
-func remove(target: Node2D) -> void:
+func remove(target: Node) -> void:
 	var status_effect_manager: StatusEffectManager = NodeUtils.find_node(target, StatusEffectManager)
 
 	if status_effect_manager == null or status_effects == null:
