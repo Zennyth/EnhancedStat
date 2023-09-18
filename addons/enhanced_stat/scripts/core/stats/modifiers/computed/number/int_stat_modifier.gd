@@ -1,10 +1,10 @@
 extends NumberStatModifier
 class_name IntStatModifier
 
-@export var add_value: int = 0
+@export var operation_value: int = 0
 
-func get_add_value() -> int:
-	return add_value
+func get_operation_value() -> int:
+	return operation_value
 
 func apply(value: int, stat: IntStat):
 	return super(value, stat)
