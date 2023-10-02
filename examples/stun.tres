@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StatusEffect" load_steps=13 format=3 uid="uid://bjlna64ih6rym"]
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=10 format=3 uid="uid://bjlna64ih6rym"]
 
 [ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/status_effect.gd" id="1_ecr30"]
 [ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/components/stat_modifier_status_effect_component.gd" id="2_54da5"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://examples/stats/controllable_stat.gd" id="4_eod4l"]
 [ext_resource type="PackedScene" uid="uid://djm60vxv46gse" path="res://examples/StunVfx.tscn" id="4_h3i7d"]
 [ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/components/vfx_status_effect_component.gd" id="4_omh0b"]
-[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/modifiers/computed/number/float_stat_modifier.gd" id="5_p8mis"]
-[ext_resource type="Script" path="res://examples/stats/speed_stat.gd" id="6_1fb2i"]
 
 [sub_resource type="Resource" id="Resource_gfebl"]
 script = ExtResource("3_4xyp4")
@@ -15,16 +13,9 @@ new_value = false
 stat_key = ExtResource("4_eod4l")
 apply_count = 1
 
-[sub_resource type="Resource" id="Resource_1p0x6"]
-script = ExtResource("5_p8mis")
-operation_value = 0.0
-operation = 3
-stat_key = ExtResource("6_1fb2i")
-apply_count = 1
-
 [sub_resource type="Resource" id="Resource_r3j7t"]
 script = ExtResource("2_54da5")
-stat_modifiers = Array[Resource("res://addons/enhanced_stat/scripts/core/stats/modifiers/stat_modifier.gd")]([SubResource("Resource_gfebl"), SubResource("Resource_1p0x6")])
+stat_modifiers = Array[Resource("res://addons/enhanced_stat/scripts/core/stats/modifiers/stat_modifier.gd")]([SubResource("Resource_gfebl")])
 
 [sub_resource type="Resource" id="Resource_vnhlj"]
 script = ExtResource("4_omh0b")

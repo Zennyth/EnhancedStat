@@ -41,9 +41,15 @@ script = ExtResource("5_i7qdj")
 [node name="Controller2D" type="Node2D" parent="."]
 script = ExtResource("3_aqdci")
 
-[node name="IsControllableBind" type="Node" parent="Controller2D" node_paths=PackedStringArray("stats_manager", "target")]
+[node name="IsControllableBind" type="Node" parent="Controller2D" node_paths=PackedStringArray("target", "stats_manager", "target", "target")]
 script = ExtResource("7_dwh3t")
+target = NodePath("..")
+stat_key = ExtResource("5_j7k6q")
+property_to_bind = "is_controllable"
 stats_manager = NodePath("../../Stats")
+target = NodePath("..")
+stat_key = ExtResource("5_j7k6q")
+property_to_bind = "is_controllable"
 target = NodePath("..")
 stat_key = ExtResource("5_j7k6q")
 property_to_bind = "is_controllable"
@@ -53,9 +59,15 @@ script = ExtResource("6_jnuk4")
 target = NodePath("..")
 autostart = true
 
-[node name="SpeedBind" type="Node" parent="Motion2D" node_paths=PackedStringArray("stats_manager", "target")]
+[node name="SpeedBind" type="Node" parent="Motion2D" node_paths=PackedStringArray("target", "stats_manager", "target", "target")]
 script = ExtResource("7_dwh3t")
+target = NodePath("..")
+stat_key = ExtResource("8_rnavr")
+property_to_bind = "speed"
 stats_manager = NodePath("../../Stats")
+target = NodePath("..")
+stat_key = ExtResource("8_rnavr")
+property_to_bind = "speed"
 target = NodePath("..")
 stat_key = ExtResource("8_rnavr")
 property_to_bind = "speed"
