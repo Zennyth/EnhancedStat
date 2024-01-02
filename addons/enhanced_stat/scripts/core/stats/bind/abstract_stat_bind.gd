@@ -3,12 +3,21 @@
 extends Node
 class_name AbstractStatBind
 
-@export var target: Node
+enum Mode {
+	BIND_STAT,
+	BIND_VALUE,
+}
+
+@export var mode: Mode = Mode.BIND_STAT
+@export var target: Node:
+	set(value):
+		target = value
+		notify_property_list_changed()
 @export var stat_key: GDScript
 @export var property_to_bind: String
 
 
-var _stat: Stat
+var _on_stat_value_changed
 var _stats_manager: StatsManager:
 	get = get_stats_manager
 
@@ -23,23 +32,13 @@ func _ready() -> void:
 	bind()
 
 func bind() -> void:
-	if target == null or property_to_bind == "":
-		return push_error("Target has not been configured properly.")
-	
-	if stat_key == null or _stats_manager == null:
-		return push_error("Stat has not been configured properly.")
-	
-	_stat = _stats_manager.get_stat(stat_key)
-
-	if target.get(property_to_bind) == _stat:
-		return
-	
-	target.set(property_to_bind, _stat)
-
+	if mode == Mode.BIND_STAT:
+		StatUtils.bind_stat(target, property_to_bind, stat_key, _stats_manager)	
+	elif mode == Mode.BIND_VALUE:
+		_on_stat_value_changed = StatUtils.bind_stat_value(target, property_to_bind, stat_key, _stats_manager)
 
 func unbind() -> void:
-	if _stat == null:
-		return push_warning("Can't unbind null _stat.")
-	
-	target.set(property_to_bind, null)
-
+	if mode == Mode.BIND_STAT:
+		StatUtils.unbind_stat(target, property_to_bind)	
+	elif mode == Mode.BIND_VALUE:
+		StatUtils.unbind_stat_value(target, property_to_bind, _on_stat_value_changed)

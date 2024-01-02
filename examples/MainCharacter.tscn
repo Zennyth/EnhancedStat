@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://addons/enhanced_common/scripts/controllers_2d/player_controller_2d.gd" id="3_aqdci"]
 [ext_resource type="Texture2D" uid="uid://8pvahvtehjux" path="res://docs/assets/logo.png" id="3_kdufo"]
 [ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/status_effects/status_effect_manager.gd" id="5_i7qdj"]
-[ext_resource type="Script" path="res://examples/stats/controllable_stat.gd" id="5_j7k6q"]
 [ext_resource type="Script" path="res://addons/enhanced_common/scripts/motion_2d/character_body_motion_2d.gd" id="6_jnuk4"]
-[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/bind/stat_value_bind.gd" id="7_dwh3t"]
-[ext_resource type="Script" path="res://examples/stats/speed_stat.gd" id="8_rnavr"]
+[ext_resource type="Script" path="res://examples/stats/controllable_stat.gd" id="8_5b5gp"]
+[ext_resource type="Script" path="res://addons/enhanced_stat/scripts/core/stats/bind/stat_bind.gd" id="8_7ci34"]
+[ext_resource type="Script" path="res://examples/stats/speed_stat.gd" id="9_v7rh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m5hq"]
 size = Vector2(22, 32)
@@ -41,17 +41,12 @@ script = ExtResource("5_i7qdj")
 [node name="Controller2D" type="Node2D" parent="."]
 script = ExtResource("3_aqdci")
 
-[node name="IsControllableBind" type="Node" parent="Controller2D" node_paths=PackedStringArray("target", "stats_manager", "target", "target")]
-script = ExtResource("7_dwh3t")
-target = NodePath("..")
-stat_key = ExtResource("5_j7k6q")
-property_to_bind = "is_controllable"
+[node name="StatBind" type="Node" parent="Controller2D" node_paths=PackedStringArray("stats_manager", "target")]
+script = ExtResource("8_7ci34")
 stats_manager = NodePath("../../Stats")
+mode = 1
 target = NodePath("..")
-stat_key = ExtResource("5_j7k6q")
-property_to_bind = "is_controllable"
-target = NodePath("..")
-stat_key = ExtResource("5_j7k6q")
+stat_key = ExtResource("8_5b5gp")
 property_to_bind = "is_controllable"
 
 [node name="Motion2D" type="Node" parent="." node_paths=PackedStringArray("target")]
@@ -59,15 +54,10 @@ script = ExtResource("6_jnuk4")
 target = NodePath("..")
 autostart = true
 
-[node name="SpeedBind" type="Node" parent="Motion2D" node_paths=PackedStringArray("target", "stats_manager", "target", "target")]
-script = ExtResource("7_dwh3t")
-target = NodePath("..")
-stat_key = ExtResource("8_rnavr")
-property_to_bind = "speed"
+[node name="StatBind" type="Node" parent="Motion2D" node_paths=PackedStringArray("stats_manager", "target")]
+script = ExtResource("8_7ci34")
 stats_manager = NodePath("../../Stats")
+mode = 1
 target = NodePath("..")
-stat_key = ExtResource("8_rnavr")
-property_to_bind = "speed"
-target = NodePath("..")
-stat_key = ExtResource("8_rnavr")
+stat_key = ExtResource("9_v7rh6")
 property_to_bind = "speed"
