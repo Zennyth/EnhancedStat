@@ -6,23 +6,23 @@
 [ext_resource type="Script" path="res://examples/stats/health_stat.gd" id="3_tlg4f"]
 [ext_resource type="Script" path="res://examples/stats/speed_stat.gd" id="5_ujxmp"]
 
-[sub_resource type="Resource" id="Resource_lfj2i"]
+[sub_resource type="Resource" id="Resource_wpc8h"]
 script = ExtResource("1_wpt1d")
 default_value = true
 
-[sub_resource type="Resource" id="Resource_217d6"]
-script = ExtResource("2_xfufk")
-default_value = 0
-
-[sub_resource type="Resource" id="Resource_y74ib"]
+[sub_resource type="Resource" id="Resource_8epgt"]
 script = ExtResource("2_xfufk")
 default_value = 10
 
-[sub_resource type="Resource" id="Resource_a4w8b"]
-script = ExtResource("3_tlg4f")
-max = SubResource("Resource_217d6")
-min = SubResource("Resource_y74ib")
+[sub_resource type="Resource" id="Resource_d3vnn"]
+script = ExtResource("2_xfufk")
 default_value = 0
+
+[sub_resource type="Resource" id="Resource_e7edq"]
+script = ExtResource("3_tlg4f")
+max = SubResource("Resource_8epgt")
+min = SubResource("Resource_d3vnn")
+default_value = -1
 
 [sub_resource type="Resource" id="Resource_jbcoo"]
 script = ExtResource("5_ujxmp")
@@ -30,6 +30,6 @@ default_value = 100.0
 
 [resource]
 script = ExtResource("1_lwvtb")
-controllable = SubResource("Resource_lfj2i")
-health = SubResource("Resource_a4w8b")
+controllable = SubResource("Resource_wpc8h")
+health = SubResource("Resource_e7edq")
 speed = SubResource("Resource_jbcoo")
