@@ -1,4 +1,3 @@
-
 ## Basic Interface :gear:
 
 The computed stats come with a set of functions to make it easy to compute their values, particularly when using `StatModifier`.
@@ -6,22 +5,22 @@ The computed stats come with a set of functions to make it easy to compute their
 ### Methods:
 
 - `compute()`: Calculates the current value of the stat based on all the attached modifiers.
-
-    ```gdscript
-    health.compute()
-    ```
+  
+  ```gdscript
+  health.compute()
+  ```
 
 - `add_stat_modifier(stat_modifier: StatModifier) -> void`: Adds a modifier to the stat.
-
-    ```gdscript
-    health.add_stat_modifier(health_modifier)
-    ```
+  
+  ```gdscript
+  health.add_stat_modifier(health_modifier)
+  ```
 
 - `remove_stat_modifier(stat_modifier: StatModifier) -> void`: Removes a specific modifier from the stat.
-
-    ```gdscript
-    health.remove_stat_modifier(health_modifier)
-    ```
+  
+  ```gdscript
+  health.remove_stat_modifier(health_modifier)
+  ```
 
 ### Working with StatModifier :wrench:
 
@@ -29,14 +28,16 @@ The `StatModifier` is a class used to modify a computed stat. It contains a meth
 
 For example, a `StatModifier` for an `Int` stat might look like:
 
+> PS. EnhancedStat has already implemented the basic modifier for you.
+
 ```gdscript
 extends NumberStatModifier
 class_name IntStatModifier
 
-@export var add_value: int = 10
+@export var operation_value: int = 0
 
-func get_add_value() -> int:
-	return add_value
+func get_operation_value() -> int:
+	return operation_value
 
 func apply(value: int, stat: IntStat):
 	return super(value, stat)
@@ -46,7 +47,7 @@ To use this `StatModifier` with a computed stat:
 
 ```gdscript
 var add_health_modifier = IntStatModifier.new()
-health.add_stat_modifier(add_health_modifier)
+health.add_stat_modifier(add_health_modifier) # health is a Computed stats
 ```
 
 Now, whenever you call `compute()` on `health`, it will add 10 to its value. Note that whenever you add or remove a modifier to a stat, compute will automatically be called to update the stat.
